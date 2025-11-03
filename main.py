@@ -3,6 +3,7 @@ main.py
 -------
 This is the entry point of the game.
 The player interacts with Survivor and Zombie objects here.
+Finish off the game logic using the TODO methods from the Survivor and Zombie objects
 """
 
 from survivor import Survivor
