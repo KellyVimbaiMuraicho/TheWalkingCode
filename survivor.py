@@ -16,7 +16,7 @@ These TODOs are tested in test_game.py
 """
 
 class Survivor:
-    def __init__(self, name, health=100):
+    def __init__(self, name, item , health=100):
         """
         Create a new survivor.
 
@@ -25,20 +25,27 @@ class Survivor:
         health (int): Starting health (default 100).
         """
         self.name = name
+        self.item = item
         self.health = health
         self.inventory = []
+        
+        
 
     def pick_up(self, item):
         """Add an item to the survivor's inventory."""
         self.inventory.append(item)
 
-    def remove_item(self, item):
+    def remove_item(self,item):
         """
         TODO:
         Remove an item from inventory *if it exists*.
         If the item is NOT in the inventory, do nothing.
         """
-        pass  # TODO implement this
+        if self.item in self.inventory:
+            self.remove_item("") 
+        elif self.item() not in self.inventory:
+            pass
+            
 
     def take_damage(self, amount):
         """
@@ -53,7 +60,12 @@ class Survivor:
         TODO:
         Increase survivor health by `amount`.
         Health should NOT exceed 100.
+        
         """
+        self.heal += amount
+        if self.heal <= 0:
+            self.health = 100
+            
         pass  # TODO implement this
 
     def is_alive(self):
